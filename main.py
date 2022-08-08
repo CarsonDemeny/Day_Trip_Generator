@@ -11,7 +11,7 @@ def main_generator():
    generated_trip = [random.choice(destinations_list), random.choice(restaurants_list), random.choice(mode_of_transport_list), random.choice(entertainment_list)]
 
    displayed_greeting()
-   while True:
+   while True:                                                                                                                     
         displayed_trip(generated_trip)
         user_input = input('Does this trip suit you? if Yes type yes, if No type no')
         if user_input == "yes":
@@ -30,6 +30,10 @@ def displayed_greeting():
 def displayed_ending():
     print('Awesome! Glad help pick out your perfect trip')
 
-def displayed_trip():
+def displayed_trip(list_of_trip_options):
+    trip_strings = ''
+    trip_titles = ['Destination', 'Restaurant', 'Transportation', 'Entertainment']
+    for index in range(len(list_of_trip_options)):
+        trip_strings += f' {trip_titles[index]} {list_of_trip_options[index]}'
 
-def reselect_trip_option():
+        print(trip_strings)
